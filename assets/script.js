@@ -17,12 +17,14 @@ const slides = [
 	}
 ]
 
+//Flèches 
 const leftArrowElement = document.querySelector(".arrow_left");
 leftArrowElement.addEventListener("click", () => {
-	console.log("Flèche gauche");
+	console.log("leftArrowElment")
 });
+
 
 const rightArrowElement = document.querySelector(".arrow_right");
 rightArrowElement.addEventListener("click", () => {
-	console.log("Flèche droite");
+	console.log("rightArrowElement");
 });
