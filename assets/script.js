@@ -20,11 +20,41 @@ const slides = [
 //Flèches 
 const leftArrowElement = document.querySelector(".arrow_left");
 leftArrowElement.addEventListener("click", () => {
-	console.log("leftArrowElment")
+	slideIndex = -1;
+	console.log(slideIndex);
 });
 
 
 const rightArrowElement = document.querySelector(".arrow_right");
 rightArrowElement.addEventListener("click", () => {
-	console.log("rightArrowElement");
+	slideIndex = +1;
+	console.log(slideIndex);
 });
+
+//Bullet points
+// for (let i = 0; i < slides.length; i++) {
+// 	console.log(slides[i]);
+// }
+
+// const imageElement = document.createElement("banner-img");
+// imageElement.src = slides.image;
+
+// const pElement = document.createElement("#banner p");
+// pElement.innerText = slides.p;
+
+// const sectionSlide = document.querySelector("#banner");
+// sectionSlide.appendChild(imageElement);
+// sectionSlide.appendChild(pElement);
+
+const bulletPoints = document.querySelector(".dots");
+console.log(bulletPoints)
+
+const bannerTag = document.querySelector("#banner");
+//console.log(bannerTag)
+const imageBanner = document.querySelector(".banner-img");
+// console.log(imageBanner)
+
+const pBanner = document.querySelector("#banner p");
+//console.log(pBanner)
+pBanner.innerHTML = "coucou";
+let slideIndex = 0
