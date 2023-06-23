@@ -17,17 +17,18 @@ const slides = [
 	}
 ]
 
+let slideIndex = 0
 //Flèches 
 const leftArrowElement = document.querySelector(".arrow_left");
 leftArrowElement.addEventListener("click", () => {
-	slideIndex = -1;
+	slideIndex = slideIndex-1;
 	console.log(slideIndex);
 });
 
 
 const rightArrowElement = document.querySelector(".arrow_right");
 rightArrowElement.addEventListener("click", () => {
-	slideIndex = +1;
+	slideIndex = slideIndex+1;
 	console.log(slideIndex);
 });
 
@@ -46,8 +47,8 @@ rightArrowElement.addEventListener("click", () => {
 // sectionSlide.appendChild(imageElement);
 // sectionSlide.appendChild(pElement);
 
+//Dots
 const bulletPoints = document.querySelector(".dots");
-console.log(bulletPoints)
 
 const bannerTag = document.querySelector("#banner");
 //console.log(bannerTag)
@@ -55,6 +56,25 @@ const imageBanner = document.querySelector(".banner-img");
 // console.log(imageBanner)
 
 const pBanner = document.querySelector("#banner p");
+
 //console.log(pBanner)
 pBanner.innerHTML = "coucou";
-let slideIndex = 0
+
+//Bullet points
+while (slideIndex < slides.length) {
+	let newDot = document.createElement("div");
+	if (slideIndex===0){
+		newDot.classList.add("dot_selected");
+	}
+	newDot.classList.add("dot");
+	bulletPoints.appendChild(newDot);
+    slideIndex++
+}
+
+let rightClick = true;
+if (rightClick){
+	
+	console.log();
+} else{
+	console.log();
+}
