@@ -16,49 +16,35 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+//Constantes
+//Dots
+const bulletPoints = document.querySelector(".dots");
 
-let slideIndex = 0
+const imageBanner = document.querySelector(".banner-img");
+
+const pBanner = document.querySelector("#banner p");
+
+const bannerTag = document.querySelector("#banner");
+// bannerTag.appendChild(imageBanner)
+// bannerTag.appendChild(pBanner)
+
 //Flèches 
+let slideIndex = 0
 const leftArrowElement = document.querySelector(".arrow_left");
 leftArrowElement.addEventListener("click", () => {
 	slideIndex = slideIndex-1;
 	console.log(slideIndex);
 });
 
-
 const rightArrowElement = document.querySelector(".arrow_right");
 rightArrowElement.addEventListener("click", () => {
 	slideIndex = slideIndex+1;
 	console.log(slideIndex);
+	pBanner.innerHTML = slides[slideIndex].tagLine;
+
 });
 
-//Bullet points
-// for (let i = 0; i < slides.length; i++) {
-// 	console.log(slides[i]);
-// }
 
-// const imageElement = document.createElement("banner-img");
-// imageElement.src = slides.image;
-
-// const pElement = document.createElement("#banner p");
-// pElement.innerText = slides.p;
-
-// const sectionSlide = document.querySelector("#banner");
-// sectionSlide.appendChild(imageElement);
-// sectionSlide.appendChild(pElement);
-
-//Dots
-const bulletPoints = document.querySelector(".dots");
-
-const bannerTag = document.querySelector("#banner");
-//console.log(bannerTag)
-const imageBanner = document.querySelector(".banner-img");
-// console.log(imageBanner)
-
-const pBanner = document.querySelector("#banner p");
-
-//console.log(pBanner)
-pBanner.innerHTML = "coucou";
 
 //Bullet points
 while (slideIndex < slides.length) {
@@ -71,10 +57,8 @@ while (slideIndex < slides.length) {
     slideIndex++
 }
 
-let rightClick = true;
-if (rightClick){
-	
-	console.log();
-} else{
-	console.log();
+//Fonction 
+function newSlide(slides){
+	// imageBanner.src = document.createElement (".banner-img");
+	// pBanner.innerText = ``
 }
