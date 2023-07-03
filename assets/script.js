@@ -34,6 +34,8 @@ const leftArrowElement = document.querySelector(".arrow_left");
 leftArrowElement.addEventListener("click", () => {
 	slideIndex = slideIndex-1;
 	console.log(slideIndex);
+	pBanner.innerHTML = slides[slideIndex].tagLine;
+	imageBanner.src = "./assets/images/slideshow/" + slides[slideIndex].image;
 });
 
 const rightArrowElement = document.querySelector(".arrow_right");
@@ -41,7 +43,7 @@ rightArrowElement.addEventListener("click", () => {
 	slideIndex = slideIndex+1;
 	console.log(slideIndex);
 	pBanner.innerHTML = slides[slideIndex].tagLine;
-
+	imageBanner.src = "./assets/images/slideshow/" + slides[slideIndex].image;
 });
 
 
