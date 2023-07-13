@@ -17,7 +17,6 @@ const slides = [
 	}
 ]
 //Constantes
-//Dots
 const bulletPoints = document.querySelector(".dots");
 
 const imageBanner = document.querySelector(".banner-img");
@@ -31,28 +30,30 @@ let slideIndex = 0
 const leftArrowElement = document.querySelector(".arrow_left");
 leftArrowElement.addEventListener("click", () => {
 	slideIndex = slideIndex-1;
-	
+
 	if (slideIndex < 0) {
 		slideIndex = slides.length - 1;
 	}
 	imageBanner.src = "./assets/images/slideshow/" + slides[slideIndex].image;
 	pBanner.innerHTML = slides[slideIndex].tagLine;
+
 });
 
-// au clic à gauche je veux qu'on revienne à la  slide précedante et quand on arrive à la premère je veux qu'on revienne à la 4ème slide
-//au 4ème clic à gauche il faut afficher la dernière image et le dernière texte
 const rightArrowElement = document.querySelector(".arrow_right");
 rightArrowElement.addEventListener("click", () => {
 	slideIndex = slideIndex + 1;
+
+	bulletPoints.children[slideIndex - 1].classList.remove("dot_selected");
 	
 	if (slideIndex > slides.length - 1) {
 		slideIndex = 0;
 	}
 	imageBanner.src = "./assets/images/slideshow/" + slides[slideIndex].image;
 	pBanner.innerHTML = slides[slideIndex].tagLine;
-});
+	 
+	bulletPoints.children[slideIndex].classList.add("dot_selected");
 
-//au 4ème clic à droite il faut afficher la première image et le premier texte
+});
 
 //Bullet points
 let slide = 0
@@ -65,6 +66,3 @@ while (slide < slides.length) {
 	bulletPoints.appendChild(newDot);
     slide++
 }
-
-// let fruits = ["pomme", "cerise", "orange", "banane"];
-// console.log(slideIndex.length-1);
