@@ -31,11 +31,16 @@ const leftArrowElement = document.querySelector(".arrow_left");
 leftArrowElement.addEventListener("click", () => {
 	slideIndex = slideIndex-1;
 
+	bulletPoints.children[slideIndex + 1].classList.remove("dot_selected");
+
 	if (slideIndex < 0) {
 		slideIndex = slides.length - 1;
 	}
+
 	imageBanner.src = "./assets/images/slideshow/" + slides[slideIndex].image;
 	pBanner.innerHTML = slides[slideIndex].tagLine;
+
+	bulletPoints.children[slideIndex].classList.add("dot_selected");
 
 });
 
@@ -48,6 +53,7 @@ rightArrowElement.addEventListener("click", () => {
 	if (slideIndex > slides.length - 1) {
 		slideIndex = 0;
 	}
+	
 	imageBanner.src = "./assets/images/slideshow/" + slides[slideIndex].image;
 	pBanner.innerHTML = slides[slideIndex].tagLine;
 	 
