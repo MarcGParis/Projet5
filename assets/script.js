@@ -29,9 +29,8 @@ const bannerTag = document.querySelector("#banner");
 let slideIndex = 0
 const leftArrowElement = document.querySelector(".arrow_left");
 leftArrowElement.addEventListener("click", () => {
+	bulletPoints.children[slideIndex].classList.remove("dot_selected");
 	slideIndex = slideIndex-1;
-
-	bulletPoints.children[slideIndex + 1].classList.remove("dot_selected");
 
 	if (slideIndex < 0) {
 		slideIndex = slides.length - 1;
@@ -46,9 +45,8 @@ leftArrowElement.addEventListener("click", () => {
 
 const rightArrowElement = document.querySelector(".arrow_right");
 rightArrowElement.addEventListener("click", () => {
+	bulletPoints.children[slideIndex].classList.remove("dot_selected");
 	slideIndex = slideIndex + 1;
-
-	bulletPoints.children[slideIndex - 1].classList.remove("dot_selected");
 	
 	if (slideIndex > slides.length - 1) {
 		slideIndex = 0;
